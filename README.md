@@ -1,4 +1,4 @@
-A class library for Discord.
+A .NET class library for Discord.
 
 # Usage Examples
 - [DiscordStickyMessages](https://github.com/HollieShadbolt/DiscordStickyMessages)
