@@ -149,7 +149,7 @@ public static class DiscordTests
                httpRequestMessage.RequestUri?.ToString() == "https://discordapp.com/api/guilds/" +
                $"{getLatestMessageAsyncParams.GuildId}/messages/search?limit=1&channel_id=" +
                $"{getLatestMessageAsyncParams.ChannelId}&author_id={getLatestMessageAsyncParams.AuthorId}" +
-               "&sort_by=timestamp";
+               "&sort_by=timestamp&include_nsfw=true";
     }
 
     #endregion

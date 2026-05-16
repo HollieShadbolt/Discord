@@ -124,6 +124,7 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
         query["channel_id"] = getLatestMessageAsyncParams.ChannelId;
         query["author_id"] = getLatestMessageAsyncParams.AuthorId;
         query["sort_by"] = "timestamp";
+        query["include_nsfw"] = "true";
 
         uriBuilder.Query = query.ToString();
 
