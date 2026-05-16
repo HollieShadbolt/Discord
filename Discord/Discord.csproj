@@ -6,6 +6,12 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <PackageId>Discord</PackageId>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/HollieShadbolt/Discord</RepositoryUrl>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="HttpRequestMessageHandler" Version="0.0.7" />
     </ItemGroup>
