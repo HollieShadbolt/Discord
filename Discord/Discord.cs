@@ -18,11 +18,15 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
     private const string Scheme = "Bot";
     private const string Uri = "https://discordapp.com/api";
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task<User> GetCurrentUserAsync(CancellationToken cancellationToken) =>
         await httpRequestMessageFactoryHandler.SendAsync<User>(
             GetGetCurrentUserHttpRequestMessageFactory,
             cancellationToken);
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task<Message?> GetLatestMessageAsync(
         GetLatestMessageAsyncParams getLatestMessageAsyncParams,
         CancellationToken cancellationToken)
@@ -36,6 +40,8 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
         return guildMessages.Messages.SingleOrDefault()?.SingleOrDefault();
     }
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task<IEnumerable<Message>> GetChannelMessagesAfterAsync(
         GetChannelMessagesAfterAsyncParams getChannelMessagesAfterAsyncParams,
         CancellationToken cancellationToken)
@@ -48,6 +54,8 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
             cancellationToken);
     }
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task<Channel> ModifyChannelNameAsync(
         ModifyChannelNameAsyncParams modifyChannelNameAsyncParams,
         CancellationToken cancellationToken)
@@ -57,6 +65,8 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
         return await httpRequestMessageFactoryHandler.SendAsync<Channel>(httpRequestMessageFactory, cancellationToken);
     }
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task<string?> GetUserVoiceStateChannelIdAsync(
         GetUserVoiceStateChannelIdAsyncParams getUserVoiceStateChannelIdAsyncParams,
         CancellationToken cancellationToken)
@@ -70,6 +80,8 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
             cancellationToken);
     }
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task<Message> CreateMessageAsync(
         CreateMessageAsyncParams createMessageAsyncParams,
         CancellationToken cancellationToken)
@@ -79,6 +91,8 @@ public sealed class Discord(IHttpRequestMessageFactoryHandler httpRequestMessage
         return await httpRequestMessageFactoryHandler.SendAsync<Message>(httpRequestMessageFactory, cancellationToken);
     }
 
+    /// <inheritdoc/>
+    /// <exception cref="TaskCanceledException">The cancellation token was cancelled.</exception>
     public async Task DeleteMessageAsync(
         DeleteMessageAsyncParams deleteMessageAsyncParams,
         CancellationToken cancellationToken)
